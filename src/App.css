@@ -29,3 +29,14 @@
   animation-duration: 1s;
 
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+  width: 20px;
+}
+
