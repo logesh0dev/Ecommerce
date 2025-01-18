@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
-
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-
 import { IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { useNavigate, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export function Nav() {
+
+  const product = useSelector((store) => store.store.product)
+
+  const navigate = useNavigate();
   const [drawerbool, setdrawerbool] = useState(false);
 
   const [navlist, setnavlist] = useState([
-    { id: 1, name: "Home" },
-    { id: 2, name: "Category" },
-    { id: 3, name: "Collections" },
-    { id: 4, name: "Contact " },
+    { id: 1, name: "Home", route: "/" },
+    { id: 2, name: "Category", route: "/category" },
+    { id: 3, name: "Collections", route: "/collections" },
+    { id: 4, name: "Contact", route: "/contact" },
   ]);
 
   const handleResize = () => {
@@ -44,35 +48,39 @@ export function Nav() {
     <div>
       <div className="">
         <section className="mx-auto">
-          <nav className="flex justify-between border-2 border-slate-800 text-dark w-90 rounded-full m-3 ">
+          <nav className="flex justify-between border-2 border-slate-800 text-dark w-90 rounded-full m-3">
             <div className="px-2 xl:px-12 py-2 flex w-full items-center">
-              <a className="text-3xl font-bold font-heading cursor-pointer ">
+              <Link to="/" className="text-3xl font-bold font-heading cursor-pointer">
                 Fashion Here.
-              </a>
+              </Link>
               <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 {navlist.map((arr, index) => (
                   <li key={index}>
-                    <a className="hover:text-gray-500 cursor-pointer">
+                    <Link to={arr.route} className="hover:text-gray-500 cursor-pointer">
                       {arr.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
               <div className="hidden md:flex items-center space-x-5 items-center">
-                <a className="hover:text-gray-500">
+                <a className=" hover:scale-105">
                   <FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>
                 </a>
 
-                <a className="flex items-center hover:text-gray-200">
+                <a className="flex items-center hover:scale-105">
                   <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
+                  {/* {
+                    product.length?
+                  } */}
                   <span className="flex absolute -mt-5 ml-4">
-                    <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
+                    <span className="animate-ping absolute inline-flex h-5 w-5 rounded-full bg-pink-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-5 w-5 bg-pink-500 text-sm text-white"><span className="absolute top-[-0.5px]  w-5 h-5 flex justify-center" >{product.length}</span></span>
+                    
                   </span>
                 </a>
 
                 <a
-                  className="flex items-center hover:text-gray-200"
+                  className="flex items-center hover:scale-105"
                   data-popover-target="popover-user-profile"
                 >
                   <AccountCircleOutlinedIcon></AccountCircleOutlinedIcon>
@@ -104,8 +112,7 @@ export function Nav() {
 
       <aside
         id="default-sidebar"
-        className={`absolute top-0 right-0 z-40 h-screen transition-all duration-100  
-        ease-out ${drawerbool ? "w-72" : "w-0 hidden"}`}
+        className={`fixed top-0 right-0 z-40 h-screen transition-all duration-300 ease-out transform ${drawerbool ? "w-72 translate-x-0" : "w-0 translate-x-full"}`}
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 ">
@@ -130,22 +137,22 @@ export function Nav() {
           <ul className="space-y-2 font-medium">
             {navlist.map((arr, index) => (
               <li key={index}>
-                <a className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <Link to={arr.route} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <span className="flex-1 ms-3 whitespace-nowrap">
                     {arr.name}
                   </span>
-                </a>
+                </Link>
               </li>
             ))}
             <li>
-              <a className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <Link to="/signin" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <span className="flex-1 ms-3 whitespace-nowrap">Sign In</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <Link to="/signup" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <span className="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

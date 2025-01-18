@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import fashion from "../../assets/fashion.jpg";
 import fashionset from "../../assets/fashionset.jpg";
 import { Link } from "react-router-dom";
@@ -7,8 +7,15 @@ import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import PercentIcon from "@mui/icons-material/Percent";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import { Items } from "./Items";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { removeProduct, setProduct } from "../store/slice";
 
 export const Home = () => {
+
+  const dispatch = useDispatch();
+  const product = useSelector((store) => store.store.product)
+
   const productsarray = [
     {
       name: "Nike",
@@ -112,6 +119,16 @@ export const Home = () => {
     }
   ];
 
+  const addtoCart = (product) => {
+    dispatch(setProduct(product))
+  }
+  
+  const removeFromCart = (product) => {
+    dispatch(removeProduct(product))
+  }
+
+
+
   return (
     <div  >
       <div className="bg-[#CCD3CA] font-lora">
@@ -192,6 +209,8 @@ export const Home = () => {
               image={pro.image}
               prev_amount={pro.prev_amount}
               offer={pro.offer}
+              add={() => addtoCart(pro)}
+
             ></Items>
           ))}
         </div>
@@ -230,6 +249,8 @@ export const Home = () => {
                 image={pro.image}
                 prev_amount={pro.prev_amount}
                 offer={pro.offer}
+                add={() => addtoCart(pro)}
+                remove ={() => removeFromCart(pro)}
               ></Items>
             ))}
           </div>
