@@ -31,6 +31,7 @@ export const Items = (pro) => {
             class="object-cover w-full"
             src={pro.image}
             alt="product image"
+            onClick={() => pro.movetoProduct()}
           />
           <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
             {pro.offer}
@@ -48,7 +49,7 @@ export const Items = (pro) => {
               {pro.name}
             </h5>
           </a>
-          <div class="mt-2 mb-5 flex items-center justify-between">
+          <div class="mt-2 mb-5 flex items-center justify-between"  >
             <p>
               <span class="text-3xl font-bold text-slate-900">{pro.amount}</span>
               <span class="text-sm text-slate-900 line-through">{pro.prev_amount}</span>
@@ -106,35 +107,12 @@ export const Items = (pro) => {
           </div>
 
 
-          {/* <div className="flex gap-6 justify-center " >
-            <a onClick={() => pro.add()}
-              class=" cursor-pointer items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90"
-            >-</a> <span className="flex cursor-pointer items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90" >6</span>
-            <a onClick={() => pro.add()}
-              class=" cursor-pointer items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90"
-            >+</a>
-            
-          </div> */}
+          
           <div className="flex gap-2 transform-all" >
             <a onClick={() => pro.add()}
               class={`flex cursor-pointer ${count != 0 ? 'w-[calc(100%_-_100px)]' : "w-full"} items-center justify-center rounded-md bg-slate-900 px-1 py-2 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90`}
             >
-              {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-              />
-
-            </svg> */}
+              
               Add to cart
             </a>
 

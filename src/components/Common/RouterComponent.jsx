@@ -6,6 +6,8 @@ import { Collections } from "../Pages/Collections";
 import { Contact } from "../Pages/Contact";
 import { Cart } from "../Pages/Cart";
 import WhishList from "../Pages/WhishList";
+import Account from "./Account";
+import Product from "./Product";
 
 export const RourterComponent = () => {
   return (
@@ -16,7 +18,8 @@ export const RourterComponent = () => {
       <Route path="contact" element={<Contact />} />
       <Route path="cart" element={<Cart/>}/>
       <Route path="wishlist" element={<WhishList/>}/>
-
+      <Route path="account" element={<Account/>} />
+      <Route path="/product/:id" element={<Product/>}/>
     </Routes>
   );
 };

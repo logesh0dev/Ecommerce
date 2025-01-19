@@ -86,6 +86,7 @@ export function Nav() {
                 </Link>
 
 
+                <Link to="/account" >
 
                 <a
                   className="flex items-center hover:scale-105"
@@ -93,6 +94,7 @@ export function Nav() {
                 >
                   <AccountCircleOutlinedIcon></AccountCircleOutlinedIcon>
                 </a>
+                </Link>
               </div>
             </div>
             <Link to='/wishlist' className=" hover:text-gray-500 cursor-pointer">
@@ -142,6 +144,7 @@ export function Nav() {
             </IconButton>
           </div>
           <div className="flex items-center justify-center mb-4">
+            <Link to="/account" onClick={() => setdrawerbool(false)} >
             <img
               src="https://img.freepik.com/free-vector/man-with-mustache_1308-41559.jpg?t=st=1737268342~exp=1737271942~hmac=d180844cbad08c4fbfaa8715ca232d45f2194b04ab32312d1422eb2617116996&w=740"
               alt="tania andrew"
@@ -151,6 +154,7 @@ export function Nav() {
               <span>Log</span> •{" "}
               <a className="text-sm text-blue-gray-700">@Log#</a>
             </h6>
+            </Link>
           </div>
 
           <hr></hr>
