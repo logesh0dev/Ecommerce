@@ -27,19 +27,19 @@ const WhishList = () => {
     return (
         <div>
             <div class="transform  w-full  bg-white px-10 py-10">
-                <div class="flex justify-between border-b pb-8">
+                <div class="md:flex justify-between border-b pb-8">
                     <h1 class="font-semibold text-2xl">WishList</h1>
                     <h2 class="font-semibold text-2xl">{product.length} Items</h2>
                 </div>
-                <div className='flex gap-6 flex-wrap' > 
+                <div className='flex gap-6 flex-wrap ' > 
                 {
                     product.map((pro, index) => (<>
-                        <div key={index} class="md:flex items-strech  md:py-10 lg:py-4 border-t border-gray-50 bg-gray-200 rounded p-4">
-                            <div class="md:w-4/12 2xl:w-1/4 w-1/2">
+                        <div key={index} class="md:flex items-strech  md:py-10 lg:py-4 border-t border-gray-50 bg-gray-200 rounded p-4 w-full xl:w-1/2 ">
+                            <div class="w-1/2">
                                 <img src={pro.image} alt="Black Leather Purse" class=" w-64 h-full object-center object-cover md:block hidden" />
                                 <img src={pro.image} alt="Black Leather Purse" class="md:hidden w-full h-full object-center object-cover" />
                             </div>
-                            <div class="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
+                            <div class="md:pl-3 pt-6 md:pt-0 w-full flex flex-col justify-center">
                                 {/* <p class="text-xs leading-3 text-gray-800 md:pt-0 pt-4">RF293</p> */}
                                 <div class="flex items-center justify-between w-full">
                                     <p class="text-base font-black leading-none text-gray-800">{pro.name}</p>
@@ -48,12 +48,13 @@ const WhishList = () => {
                                 <p class="text-xs leading-3 text-gray-600 pt-2">Height: 10 inches</p>
                                 <p class="text-xs leading-3 text-gray-600 py-4">Color: {pro.color}</p>
                                 <p class="w-96 text-xs leading-3 text-gray-600">Composition: 100% calf leather</p>
-                                <div class="flex items-center justify-between pt-5">
+                                <div class="md:flex items-center justify-between pt-5">
+                                <p class="text-base font-black leading-none text-gray-800 pb-4">Rs. {pro.amount}</p>
+
                                     <div class="flex gap-2 itemms-center">
                                         <p class="cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-3 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90" onClick={() =>addtoCart(pro)} >Add to Cart</p>
                                         <p class="cursor-pointer items-center justify-center rounded-md bg-red-700 px-8 py-3 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90" onClick={() =>addOrRemoveFav(pro)} >Remove</p>
                                     </div>
-                                    <p class="text-base font-black leading-none text-gray-800">Rs. {pro.amount}</p>
                                 </div>
                             </div>
                         </div>
