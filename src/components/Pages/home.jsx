@@ -24,6 +24,7 @@ export const Home = () => {
       offer: "38% off",
       rating: 4.6,
       prev_amount: "699",
+      color:"black",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaVaA4EBXKdy_LFSRDwxdo7r3LPkVCjxGpeJyCD0xLMFiVSZYURNqkv0_tYjP-C8PdePo&usqp=CAU",
     },
@@ -34,6 +35,8 @@ export const Home = () => {
       offer: "28% off",
       rating: 4.8,
       prev_amount: "899,",
+      color:"black",
+
       image:
         "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/386269/01/fnd/EEA/fmt/png/All-Day-Active-Sneakers",
     },
@@ -44,6 +47,8 @@ export const Home = () => {
       offer: "32% off",
       rating: 4.4,
       prev_amount: "979",
+      color:"White",
+
       image:
         "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/78b76ab3632d4251a7f2ae2b005fb600_9366/Grand_Court_TD_Lifestyle_Court_Casual_Shoes_White_GW9250_01_standard.jpg",
     },
@@ -54,68 +59,80 @@ export const Home = () => {
       offer: "18% off",
       rating: 4.3,
       prev_amount: "299",
+      color:"Black",
+
       image:
         "https://assets.ajio.com/medias/sys_master/root/20230706/Hztj/64a6dbbea9b42d15c941e528/-473Wx593H-469452097-grey-MODEL.jpg",
     },
     {
       name: "canvas",
-      id: "4",
+      id: "5",
       amount: "299",
       offer: "18% off",
       rating: 4.3,
       prev_amount: "299",
+      color:"Beige",
       image:
-        "https://assets.ajio.com/medias/sys_master/root/20230706/Hztj/64a6dbbea9b42d15c941e528/-473Wx593H-469452097-grey-MODEL.jpg",
+        "https://images-static.nykaa.com/media/catalog/product/d/7/d7faf49MZW-1054_1.jpg?tr=w-344,h-344,cm-pad_resize",
     },
     {
-      name: "Nike",
-      id: "1",
+      name: "Bata",
+      id: "6",
       amount: "499",
       offer: "38% off",
       rating: 4.6,
       prev_amount: "699",
+      color:"Navy Blue",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaVaA4EBXKdy_LFSRDwxdo7r3LPkVCjxGpeJyCD0xLMFiVSZYURNqkv0_tYjP-C8PdePo&usqp=CAU",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSCz1X_u9Ul259o0b-Mw-trrhce7KMEbyuTMP9UyhZi967ZJx53hb7Yz0R4gCwz0nZplCWxSPir2tjbvYhJT14ZSxGrK_lJiTW_VcU-chbwHsIdJ4f4fr2B",
     },
     {
-      name: "Puma",
-      id: "2",
+      name: "Crocs",
+      id: "7",
       amount: "699",
       offer: "28% off",
       rating: 4.8,
       prev_amount: "899,",
+      color:"Black",
+
       image:
-        "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/386269/01/fnd/EEA/fmt/png/All-Day-Active-Sneakers",
+        "https://www.crocs.in/media/catalog/product/2/0/206705_0dd_alt100_1.jpg?width=500",
     },
     {
-      name: "Adidas",
-      id: "3",
+      name: "Ascics",
+      id: "8",
       amount: "799",
       offer: "32% off",
       rating: 4.4,
       prev_amount: "979",
+      color:"Dark Blue",
+
       image:
-        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/78b76ab3632d4251a7f2ae2b005fb600_9366/Grand_Court_TD_Lifestyle_Court_Casual_Shoes_White_GW9250_01_standard.jpg",
+        "https://m.media-amazon.com/images/I/71UkTJkvW7L._SY695_.jpg",
     },
     {
-      name: "Rebook",
-      id: "4",
+      name: "U.S. Polo",
+      id: "9",
       amount: "299",
       offer: "18% off",
       rating: 4.3,
       prev_amount: "299",
+      color:"White",
+
       image:
-        "https://assets.ajio.com/medias/sys_master/root/20230706/Hztj/64a6dbbea9b42d15c941e528/-473Wx593H-469452097-grey-MODEL.jpg",
+        "https://m.media-amazon.com/images/I/71aFuiEntML._SY695_.jpg",
     },
     {
-      name: "canvas",
-      id: "4",
+      name: "Skechers",
+      id: "10",
       amount: "299",
       offer: "18% off",
       rating: 4.3,
       prev_amount: "299",
+      color:"Whitish Pink",
+
       image:
-        "https://assets.ajio.com/medias/sys_master/root/20230706/Hztj/64a6dbbea9b42d15c941e528/-473Wx593H-469452097-grey-MODEL.jpg",
+        "https://www.skechers.in/on/demandware.static/-/Sites-skechers_india/default/dw65c997f8/images/large/197627211503-1.jpg",
     }
   ];
 

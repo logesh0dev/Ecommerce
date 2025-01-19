@@ -67,9 +67,9 @@ export function Nav() {
                   <FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>
                 </a>
 
+                <Link to='/cart' className="hover:text-gray-500 cursor-pointer">
 
                 <a className="flex items-center hover:scale-105">
-                  <Link to='/cart' className="hover:text-gray-500 cursor-pointer">
 
                     <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
                     
@@ -78,9 +78,10 @@ export function Nav() {
                       <span className="relative inline-flex rounded-full h-5 w-5 bg-pink-500 text-sm text-white"><span className="absolute top-[-0.5px]  w-5 h-5 flex justify-center" >{product.length}</span></span>
 
                     </span>
-                  </Link>
 
                 </a>
+                </Link>
+
 
 
                 <a
@@ -91,14 +92,20 @@ export function Nav() {
                 </a>
               </div>
             </div>
-            <a className="md:hidden flex mr-6 items-center">
+            <Link to='/cart' className="hover:text-gray-500 cursor-pointer">
+
+            <a className="md:hidden flex mr-6 mt-6 items-center">
+
               <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
 
               <span className="flex absolute -mt-5 ml-4">
                 <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
               </span>
+
             </a>
+            </Link >
+
 
             <a
               onClick={() => setdrawerbool(true)}
