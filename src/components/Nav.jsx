@@ -157,7 +157,7 @@ export function Nav() {
           <ul className="space-y-2 font-medium">
             {navlist.map((arr, index) => (
               <li key={index}>
-                <Link to={arr.route} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <Link onClick={() => setdrawerbool(false)} to={arr.route} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <span className="flex-1 ms-3 whitespace-nowrap">
                     {arr.name}
                   </span>
