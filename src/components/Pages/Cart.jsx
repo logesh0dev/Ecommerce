@@ -52,7 +52,7 @@ export const Cart = () => {
                                     <div class="flex items-center justify-between pt-5">
                                         <div class="flex itemms-center">
                                             {/* <p class="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p> */}
-                                            <p class="text-xs leading-3 underline text-red-500 cursor-pointer" onClick={() => removeFromCart(pro)} >Remove</p>
+                                            <p  class="rounded-md bg-red-600 hover:bg-red-800 px-4 py-2 text-sm text-white uppercase" onClick={() => removeFromCart(pro)} >Remove</p>
                                         </div>
                                         <p class="text-base font-black leading-none text-gray-800">Rs. {pro.amount}</p>
                                     </div>
