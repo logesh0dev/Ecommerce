@@ -66,8 +66,10 @@ export function Nav() {
                 <a className=" hover:scale-105">
                   <FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>
                 </a>
+                <Link to='/cart' className="hover:text-gray-500 cursor-pointer">
 
                 <a className="flex items-center hover:scale-105">
+                    
                   <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
                   {/* {
                     product.length?
@@ -78,6 +80,8 @@ export function Nav() {
                     
                   </span>
                 </a>
+                </Link>
+
 
                 <a
                   className="flex items-center hover:scale-105"
