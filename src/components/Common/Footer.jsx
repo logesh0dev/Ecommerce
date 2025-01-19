@@ -10,7 +10,7 @@ export const Footer = () => {
                         <p className="text-xl text-gray-600">Your Ultimate Destination for Stylish Shoes and Accessories</p>
                     </div>
 
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16 px-4">
                         <h2 className="text-3xl font-semibold text-gray-800 mb-4">Step into Style: Shoes for Every Occasion</h2>
                         <p className="text-lg text-gray-600 mb-8">From everyday comfort to elegant evening wear, our collection of shoes is designed to keep you stylish without compromising on comfort.</p>
 
@@ -18,7 +18,7 @@ export const Footer = () => {
                     </div>
                 </div>
 
-                <div className="text-center mb-16">
+                <div className="text-center mb-16 px-4">
                     <h2 className="text-3xl font-semibold text-gray-800 mb-4">Why Choose FashionHere?</h2>
                     <ul className="text-lg text-gray-600 space-y-4">
                         <li><i className="fas fa-check-circle text-yellow-500 mr-2"></i><span className="font-semibold">Trendy Designs</span>: We keep up with the latest fashion trends so you can stay ahead of the curve.</li>
