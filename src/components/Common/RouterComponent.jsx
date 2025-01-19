@@ -8,7 +8,7 @@ import { Contact } from "../Pages/Contact";
 export const RourterComponent = () => {
   return (
     <Routes  >
-      <Route path="/Ecommerce" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="category" element={<Category />} />
       <Route path="collections" element={<Collections />} />
       <Route path="contact" element={<Contact />} />
