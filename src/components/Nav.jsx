@@ -63,26 +63,26 @@ export function Nav() {
                 ))}
               </ul>
               <div className="hidden md:flex items-center space-x-5 items-center">
-            <Link to='/wishlist' className="hover:text-gray-500 cursor-pointer">
+                <Link to='/wishlist' className="hover:text-gray-500 cursor-pointer">
 
-                <a className=" hover:scale-105">
-                  <FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>
-                </a>
+                  <a className=" hover:scale-105">
+                    <FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>
+                  </a>
                 </Link>
 
                 <Link to='/cart' className="hover:text-gray-500 cursor-pointer">
 
-                <a className="flex items-center hover:scale-105">
+                  <a className="flex items-center hover:scale-105">
 
                     <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
-                    
+
                     <span className="flex absolute -mt-5 ml-4">
                       <span className="animate-ping absolute inline-flex h-5 w-5 rounded-full bg-pink-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-5 w-5 bg-pink-500 text-sm text-white"><span className="absolute top-[-0.5px]  w-5 h-5 flex justify-center" >{product.length}</span></span>
 
                     </span>
 
-                </a>
+                  </a>
                 </Link>
 
 
@@ -95,18 +95,24 @@ export function Nav() {
                 </a>
               </div>
             </div>
+            <Link to='/wishlist' className="hover:text-gray-500 cursor-pointer">
+
+              <a className="md:hidden flex mr-6  items-center hover:scale-105">
+                <FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>
+              </a>
+            </Link>
             <Link to='/cart' className="hover:text-gray-500 cursor-pointer">
 
-            <a className="md:hidden flex mr-6 mt-4 items-center">
+              <a className="md:hidden flex mr-6 mt-4 items-center">
 
-              <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
+                <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
 
-              <span className="flex absolute -mt-5 ml-4">
-                <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"> </span>
-              </span>
+                <span className="flex absolute -mt-5 ml-4">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"> </span>
+                </span>
 
-            </a>
+              </a>
             </Link >
 
 
