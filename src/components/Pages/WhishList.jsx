@@ -53,7 +53,7 @@ const WhishList = () => {
 
                                     <div class="flex gap-2 itemms-center">
                                         <p class="cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-3 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90" onClick={() =>addtoCart(pro)} >Add to Cart</p>
-                                        <p class="cursor-pointer items-center justify-center rounded-md bg-red-700 px-8 py-3 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90" onClick={() =>addOrRemoveFav(pro)} >Remove</p>
+                                        <p class="cursor-pointer items-center justify-center rounded-md bg-red-700 px-8 py-3 text-center text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90" onClick={() =>addOrRemoveFav(pro)} >Remove</p>
                                     </div>
                                 </div>
                             </div>

@@ -14,8 +14,8 @@ export const RourterComponent = () => {
       <Route path="category" element={<Category />} />
       <Route path="collections" element={<Collections />} />
       <Route path="contact" element={<Contact />} />
-      <Route path="/cart" element={<Cart/>}/>
-      <Route path="/wishlist" element={<WhishList/>}/>
+      <Route path="cart" element={<Cart/>}/>
+      <Route path="wishlist" element={<WhishList/>}/>
 
     </Routes>
   );
