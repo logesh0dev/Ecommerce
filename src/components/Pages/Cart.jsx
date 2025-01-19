@@ -1,9 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-
+import { removeProduct } from "../store/slice";
 export const Cart = () => {
+    const dispatch=useDispatch()
 
     const navigate = useNavigate()
     const product = useSelector((state) => state.store.product)
@@ -17,6 +19,10 @@ export const Cart = () => {
           state: pro, // Passing the product object as state
         });
       }
+
+        const removeFromCart = (product) => {
+          dispatch(removeProduct(product))
+        }
 
     return (<>
         <div class="container mx-auto mt-10">
@@ -45,8 +51,8 @@ export const Cart = () => {
                                     <p class="w-96 text-xs leading-3 text-gray-600">Composition: 100% calf leather</p>
                                     <div class="flex items-center justify-between pt-5">
                                         <div class="flex itemms-center">
-                                            <p class="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p>
-                                            <p class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">Remove</p>
+                                            {/* <p class="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p> */}
+                                            <p class="text-xs leading-3 underline text-red-500 cursor-pointer" onClick={() => removeFromCart(pro)} >Remove</p>
                                         </div>
                                         <p class="text-base font-black leading-none text-gray-800">Rs. {pro.amount}</p>
                                     </div>
