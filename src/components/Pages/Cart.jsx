@@ -43,11 +43,11 @@ export const Cart = () => {
                                 <div class="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
                                     {/* <p class="text-xs leading-3 text-gray-800 md:pt-0 pt-4">RF293</p> */}
                                     <div class="flex items-center justify-between w-full">
-                                        <p class="text-base font-black leading-none text-gray-800">{pro.name}</p>
+                                        <p class="text font-black  text-gray-800">{pro.name}</p>
 
                                     </div>
-                                    <p class="text-xs leading-3 text-gray-600 pt-2">Height: 10 inches</p>
-                                    <p class="text-xs leading-3 text-gray-600 py-4">Color: {pro.color}</p>
+                                    <p class="text-xs  text-gray-600 pt-2">Height: 10 inches</p>
+                                    <p class="text-xs  text-gray-600 py-4">Color: {pro.color}</p>
                                     <p class="w-96 text-xs leading-3 text-gray-600">Composition: 100% calf leather</p>
                                     <div class="flex items-center justify-between pt-5">
                                         <div class="flex itemms-center">

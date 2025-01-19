@@ -95,7 +95,7 @@ export const Footer = () => {
 
                 </div>
                 <div className="bg-gray-800 text-white p-4 text-center">
-                    <p>&copy; Copyright © 2025 Fashion here</p>
+                    <p> Copyright © 2025 Fashion here</p>
 
                 </div>
             </section>

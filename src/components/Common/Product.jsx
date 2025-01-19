@@ -56,7 +56,7 @@ const Product = () => {
                         {/* <p className="text-gray-600 mb-4">SKU: WH1000XM4</p> */}
                         <div className="mb-4">
                             <span className="text-2xl font-bold mr-2">Rs. {pro.amount}</span>
-                            <span className="text-gray-500 line-through">Rs. {pro.offer}</span>
+                            <span className="text-gray-500 line-through">Rs. {pro.prev_amount}</span>
                         </div>
                         <div className="flex items-center mb-4">
                             {/* Stars */}
