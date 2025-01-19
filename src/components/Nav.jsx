@@ -94,7 +94,7 @@ export function Nav() {
             </div>
             <Link to='/cart' className="hover:text-gray-500 cursor-pointer">
 
-            <a className="md:hidden flex mr-6 mt-6 items-center">
+            <a className="md:hidden flex mr-6 mt-4 items-center">
 
               <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
 
