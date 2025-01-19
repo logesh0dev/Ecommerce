@@ -4,6 +4,9 @@ import { useSelector } from "react-redux";
 export const Cart = () => {
 
     const product = useSelector((state) => state.store.product)
+
+    const total = product.reduce((x, a) => x + Number(a.amount), 0);
+
     console.log("prod", product)
 
     return (<>
@@ -55,8 +58,8 @@ export const Cart = () => {
                 <div id="summary" class=" w-full   sm:w-1/4   md:w-1/2     px-8 py-10">
                     <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
                     <div class="flex justify-between mt-10 mb-5">
-                        <span class="font-semibold text-sm uppercase">Items 3</span>
-                        <span class="font-semibold text-sm">590$</span>
+                        <span class="font-semibold text-sm uppercase">Items {product.length}</span>
+                        <span class="font-semibold text-sm">Rs. {total}</span>
                     </div>
                     <div>
                         <label class="font-medium inline-block mb-3 text-sm uppercase">
@@ -86,7 +89,7 @@ export const Cart = () => {
                     <div class="border-t mt-8">
                         <div class="flex font-semibold justify-between py-6 text-sm uppercase">
                             <span>Total cost</span>
-                            <span>$600</span>
+                            <span>Rs. {total}</span>
                         </div>
                         <button class="w-full cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-3 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90"
                         >
