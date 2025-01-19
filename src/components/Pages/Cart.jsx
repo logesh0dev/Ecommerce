@@ -1,13 +1,22 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 
 export const Cart = () => {
 
+    const navigate = useNavigate()
     const product = useSelector((state) => state.store.product)
 
     const total = product.reduce((x, a) => x + Number(a.amount), 0);
 
     console.log("prod", product)
+
+    const moveProductPage = (pro) =>{
+        navigate(`/product/${pro.id}`, {
+          state: pro, // Passing the product object as state
+        });
+      }
 
     return (<>
         <div class="container mx-auto mt-10">
@@ -21,7 +30,7 @@ export const Cart = () => {
                     {
                         product.map((pro, index) => (<>
                             <div key={index} class="md:flex items-strech py-8 md:py-10 lg:py-8 border-t border-gray-50">
-                                <div class="md:w-4/12 2xl:w-1/4 w-full">
+                                <div class="md:w-4/12 2xl:w-1/4 w-full  " onClick={() => moveProductPage(pro)} >
                                     <img src={pro.image} alt="Black Leather Purse" class="h-full object-center object-cover md:block hidden" />
                                     <img src={pro.image} alt="Black Leather Purse" class="md:hidden w-full h-full object-center object-cover" />
                                 </div>

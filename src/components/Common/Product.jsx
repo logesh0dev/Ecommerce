@@ -1,14 +1,41 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setProduct, removeProduct, setWishlist } from "../store/slice";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
 
 const Product = () => {
+    const dispatch = useDispatch();
     const location = useLocation();
     const pro = location.state;
+
+    const wishlist = useSelector((store) => store.store.wishlist)
+    const [isFav, setIsFav] = useState(false)
+
+    useEffect(() => {
+        setIsFav(wishlist.some(x => x.name === pro.name))
+    }, [wishlist])
+
     useEffect(() => {
         // Scroll to the top of the page when the product page is loaded
         window.scrollTo(0, 0);
-      }, [location]);
+    }, [location]);
+
+    const addtoCart = (product) => {
+        dispatch(setProduct(product))
+    }
+
+    const removeFromCart = (product) => {
+        dispatch(removeProduct(product))
+    }
+
+    const addFav = (product) => {
+        console.log('wishlist added')
+        dispatch(setWishlist(product))
+    }
+
     return (
         <div className="">
             <div className="container mx-auto px-4 py-8">
@@ -59,7 +86,7 @@ const Product = () => {
 
 
                         <div className="flex space-x-4 mb-6">
-                            <button
+                            <button onClick={() => addtoCart(pro)}
                                 class={`flex cursor-pointer  items-center justify-center rounded-md bg-slate-900 px-6 py-2 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90`}
                             >
                                 <svg
@@ -78,21 +105,9 @@ const Product = () => {
                                 </svg>
                                 Add to Cart
                             </button>
-                            <button className="bg-gray-200 flex gap-2 items-center text-gray-800 px-6 py-2 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth="1.5"
-                                    stroke="currentColor"
-                                    className="size-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                                    />
-                                </svg>
+                            <button onClick={() => addFav(pro)}
+                                className="bg-gray-200 flex gap-2 items-center  px-6 py-2 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                                <FavoriteIcon className={`${isFav? 'text-red-500':'text-white-400'}`}  />
                                 Wishlist
                             </button>
                         </div>
