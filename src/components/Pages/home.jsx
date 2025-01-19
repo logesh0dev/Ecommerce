@@ -9,7 +9,7 @@ import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import { Items } from "./Items";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { removeProduct, setProduct } from "../store/slice";
+import { removeProduct, setProduct, setWishlist, removeWishList } from "../store/slice";
 
 export const Home = () => {
 
@@ -144,6 +144,11 @@ export const Home = () => {
     dispatch(removeProduct(product))
   }
 
+  const addFav = (product) => {
+    console.log('wishlist added')
+    dispatch(setWishlist(product))
+  }
+
 
 
   return (
@@ -227,6 +232,8 @@ export const Home = () => {
               prev_amount={pro.prev_amount}
               offer={pro.offer}
               add={() => addtoCart(pro)}
+              remove ={() => removeFromCart(pro)}
+              addFav = {() => addFav(pro)}
 
             ></Items>
           ))}
@@ -268,6 +275,7 @@ export const Home = () => {
                 offer={pro.offer}
                 add={() => addtoCart(pro)}
                 remove ={() => removeFromCart(pro)}
+                addFav = {() => addFav(pro)}
               ></Items>
             ))}
           </div>

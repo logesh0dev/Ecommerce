@@ -63,9 +63,12 @@ export function Nav() {
                 ))}
               </ul>
               <div className="hidden md:flex items-center space-x-5 items-center">
+            <Link to='/wishlist' className="hover:text-gray-500 cursor-pointer">
+
                 <a className=" hover:scale-105">
                   <FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>
                 </a>
+                </Link>
 
                 <Link to='/cart' className="hover:text-gray-500 cursor-pointer">
 
@@ -100,7 +103,7 @@ export function Nav() {
 
               <span className="flex absolute -mt-5 ml-4">
                 <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"> </span>
               </span>
 
             </a>

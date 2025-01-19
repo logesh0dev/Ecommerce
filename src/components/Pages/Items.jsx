@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 export const Items = (pro) => {
   const product = useSelector((store) => store.store.product)
-  const [count,setCount]=useState(0)
+  const wishlist = useSelector((store) => store.store.wishlist)
 
-  useEffect(()=>{
-      setCount(product.filter(x => x.id == pro.id).length)
-  },[product])
-  
+  const [count, setCount] = useState(0)
+  const [isFav, setIsFav] = useState(false)
+
+  useEffect(() => {
+    setCount(product.filter(x => x.id == pro.id).length)
+  }, [product])
+
+  useEffect(() => {
+    setIsFav(wishlist.some(x => x.name === pro.name))
+  }, [wishlist])
+
+
+
 
   return (
     <div className="m-4" >
@@ -24,6 +34,11 @@ export const Items = (pro) => {
           />
           <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
             {pro.offer}
+
+          </span>
+
+          <span onClick={() => pro.addFav()} class=" cursor-pointer absolute top-0 right-0 m-2 rounded bg-gray-400 p-1 text-center text-sm font-medium text-white">
+            <FavoriteIcon className={`${isFav ? 'text-red-500' : ""}`} />
 
           </span>
         </a>
@@ -102,7 +117,7 @@ export const Items = (pro) => {
           </div> */}
           <div className="flex gap-2 transform-all" >
             <a onClick={() => pro.add()}
-              class={`flex cursor-pointer ${count != 0? 'w-[calc(100%_-_100px)]':"w-full"  } items-center justify-center rounded-md bg-slate-900 px-1 py-2 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90`}
+              class={`flex cursor-pointer ${count != 0 ? 'w-[calc(100%_-_100px)]' : "w-full"} items-center justify-center rounded-md bg-slate-900 px-1 py-2 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all active:scale-90`}
             >
               {/* <svg
               xmlns="http://www.w3.org/2000/svg"

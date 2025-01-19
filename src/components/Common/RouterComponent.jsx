@@ -5,6 +5,7 @@ import { Category } from "../Pages/Category";
 import { Collections } from "../Pages/Collections";
 import { Contact } from "../Pages/Contact";
 import { Cart } from "../Pages/Cart";
+import WhishList from "../Pages/WhishList";
 
 export const RourterComponent = () => {
   return (
@@ -14,6 +15,8 @@ export const RourterComponent = () => {
       <Route path="collections" element={<Collections />} />
       <Route path="contact" element={<Contact />} />
       <Route path="/cart" element={<Cart/>}/>
+      <Route path="/wishlist" element={<WhishList/>}/>
+
     </Routes>
   );
 };
