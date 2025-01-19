@@ -143,9 +143,9 @@ export function Nav() {
           </div>
           <div className="flex items-center justify-center mb-4">
             <img
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+              src="https://img.freepik.com/free-vector/man-with-mustache_1308-41559.jpg?t=st=1737268342~exp=1737271942~hmac=d180844cbad08c4fbfaa8715ca232d45f2194b04ab32312d1422eb2617116996&w=740"
               alt="tania andrew"
-              className="relative inline-block object-cover object-center w-12 h-12 rounded-full m-2"
+              className="border-2  border-black relative inline-block object-cover object-center w-12 h-12 rounded-full m-2"
             />
             <h6 className="flex items-center gap-2 mb-2 font-sans text-base antialiased font-medium leading-relaxed tracking-normal text-blue-gray-900">
               <span>Log</span> •{" "}
@@ -164,7 +164,7 @@ export function Nav() {
                 </Link>
               </li>
             ))}
-            <li>
+            {/* <li>
               <Link to="/signin" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <span className="flex-1 ms-3 whitespace-nowrap">Sign In</span>
               </Link>
@@ -173,7 +173,7 @@ export function Nav() {
               <Link to="/signup" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <span className="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </aside>

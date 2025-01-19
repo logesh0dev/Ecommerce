@@ -31,10 +31,10 @@ const WhishList = () => {
                     <h1 class="font-semibold text-2xl">WishList</h1>
                     <h2 class="font-semibold text-2xl">{product.length} Items</h2>
                 </div>
-                <div className='flex gap-6 flex-wrap ' > 
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-2" > 
                 {
                     product.map((pro, index) => (<>
-                        <div key={index} class="md:flex items-strech  md:py-10 lg:py-4 border-t border-gray-50 bg-gray-200 rounded p-4 w-full xl:w-1/2 ">
+                        <div key={index} class="md:flex items-strech  md:py-10 lg:py-4 border-t border-gray-50 bg-gray-200 rounded p-4 w-full ">
                             <div class="w-1/2">
                                 <img src={pro.image} alt="Black Leather Purse" class=" w-64 h-full object-center object-cover md:block hidden" />
                                 <img src={pro.image} alt="Black Leather Purse" class="md:hidden w-full h-full object-center object-cover" />
